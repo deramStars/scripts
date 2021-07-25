@@ -64,6 +64,8 @@
 12 0,6-23/2 * * * node /scripts/jd_summer_movements.js >> /scripts/logs/jd_summer_movements.log 2>&1
 # jd_summer_movement_help
 14/41 7-14 * * * node /scripts/jd_summer_movement_help.js >> /scripts/logs/jd_summer_movement_help.log 2>&1
+# jd_angryCash
+50 0,1 * * * node /scripts/jd_angryCash.js >> /scripts/logs/jd_angryCash.log 2>&1
 ##############长期活动##############
 # 签到
 0 0,18 * * * cd /scripts && node jd_bean_sign.js >> /scripts/logs/jd_bean_sign.log 2>&1
