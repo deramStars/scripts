@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "32 7 * * *" script-path=jd_health.js, tag=东东健康社区
+*/
 const $ = new Env('京东快递签到');
 
 const notify = $.isNode() ? require('./sendNotify') : '';

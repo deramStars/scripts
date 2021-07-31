@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "1 0-23/1 * * *" script-path=jd_live_redrain.js,tag=超级直播间红包雨
+*/
 const $ = new Env('整点京豆雨');
 
 const notify = $.isNode() ? require('./sendNotify') : '';

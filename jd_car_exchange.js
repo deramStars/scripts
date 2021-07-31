@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "0 0 * * *" script-path=jd_car_exchange.js
+ */
 const $ = new Env('京东汽车兑换');
 
 const notify = $.isNode() ? require('./sendNotify') : '';

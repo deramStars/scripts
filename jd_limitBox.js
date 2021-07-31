@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "13-33/5 13 * * *" script-path=jd_health.js, tag=东东健康社区
+ */
 const $ = new Env('618限时盲盒');
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';

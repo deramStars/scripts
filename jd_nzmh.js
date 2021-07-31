@@ -1,5 +1,7 @@
-
-
+/*
+[Script]
+cron "35 1,22 * * *" script-path=jd_nzmh.js, tag=东东健康社区
+ */
 const $ = new Env('女装盲盒抽京豆');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';

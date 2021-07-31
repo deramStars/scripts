@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "10 7 * * * " script-path=jd_ms.js
+ */
 const $ = new Env('京东秒秒币');
 
 const notify = $.isNode() ? require('./sendNotify') : '';

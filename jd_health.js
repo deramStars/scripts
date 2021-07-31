@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "13 1,7,22" script-path=jd_health.js, tag=东东健康社区
+ */
 const $ = new Env("东东健康社区");
 const jdCookieNode = $.isNode() ? require("./jdCookie.js") : "";
 let cookiesArr = [],

@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "54 2-23/3 * * * " script-path=jd_daily_egg.js
+ */
 const $ = new Env('天天提鹅');
 let cookiesArr = [], cookie = '';
 const JD_API_HOST = 'https://ms.jr.jd.com/gw/generic/uc/h5/m';

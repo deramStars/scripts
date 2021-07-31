@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "13 8,22 * * * " script-path=jd_cash.js,tag=签到领现金
+ */
 const $ = new Env('签到领现金');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;

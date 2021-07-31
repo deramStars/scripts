@@ -1,5 +1,7 @@
-
-
+/*
+[Script]
+cron "2 0 * * * " script-path=jd_daily_egg.js
+ */
 const $ = new Env('摇京豆');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;

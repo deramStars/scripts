@@ -1,4 +1,9 @@
+/*
 
+#东东工厂
+10 * * * * jd_jdfactory.js
+
+ */
 const $ = new Env('东东工厂');
 
 const notify = $.isNode() ? require('./sendNotify') : '';

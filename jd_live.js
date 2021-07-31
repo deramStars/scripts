@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "13-33/5 13 * * *" script-path=jd_live.js
+ */
 const $ = new Env('京东直播');
 
 const notify = $.isNode() ? require('./sendNotify') : '';

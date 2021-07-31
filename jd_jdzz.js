@@ -1,4 +1,7 @@
-
+/*
+[Script]
+cron "14 11 * * * " script-path=jd_jdzz.js,tag=京东赚赚
+ */
 const $ = new Env('京东赚赚');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;

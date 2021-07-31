@@ -1,5 +1,7 @@
-
-
+/*
+[Script]
+cron "0,30 0-23/1 * * *" script-path=jd_live_redrain.js
+ */
 const $ = new Env('超级直播间红包雨');
 let allMessage = '', id = 'RRA2cUocg5uYEyuKpWNdh4qE4NW1bN2';
 let bodyList = {
