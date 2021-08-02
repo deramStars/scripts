@@ -13,7 +13,7 @@ https:\/\/api\.m.jd.com\/api\?appid=siteppM&functionId=siteppM_priceskusPull url
 5 0 * * * https://raw.githubusercontent.com/ZCY01/daily_scripts/main/jd/jd_priceProtect.js, tag=京东价格保护, img-url=https://raw.githubusercontent.com/ZCY01/img/master/pricev1.png, enabled=true
 */
 
-const $ = new Env('京东价格保护');
+const $ = new Env('京东价保');
 
 const unifiedGatewayName = 'https://api.m.jd.com'
 
@@ -80,9 +80,13 @@ function requireConfig() {
             }
         }
     }
+
     return new Promise(resolve => {
         console.log('开始获取配置文件\n')
-        $.notify = $.isNode() ? require('./sendNotify') : { sendNotify: async () => { } }
+        $.notify = $.isNode() ? require('./sendNotify') : {
+            sendNotify: async () => {
+            }
+        }
         //获取 Cookies
         $.cookiesArr = []
         if ($.isNode()) {
@@ -93,7 +97,8 @@ function requireConfig() {
                     $.cookiesArr.push(jdCookieNode[item])
                 }
             })
-            if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => { };
+            if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => {
+            };
         } else {
             //IOS等用户直接用NobyDa的jd $.cookie
             $.cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
@@ -102,8 +107,7 @@ function requireConfig() {
 
         if ($.isNode()) {
             if (process.env.JD_TOKENS) tokens = process.env.JD_TOKENS
-        }
-        else {
+        } else {
             tokens = $.getdata('jd_tokens') || tokens
         }
         $.tokenList = tokens.split('@')
@@ -129,8 +133,7 @@ function onceApply() {
                     data = JSON.parse(data)
                     if (data.flag) {
                         $.applied = true
-                    }
-                    else {
+                    } else {
                         console.log(`一键价格保护失败，原因：${data.responseMessage}`)
                     }
                 }
@@ -160,8 +163,7 @@ function checkOnceAppliedResult() {
                     data = JSON.parse(data)
                     if (data.flag) {
                         $.refundtotalamount = data.succAmount
-                    }
-                    else {
+                    } else {
                         console.log(`一键价格保护结果：${JSON.stringify(data)}`)
                     }
                 }
@@ -337,7 +339,8 @@ function Env(name, opts) {
             if (val) {
                 try {
                     json = JSON.parse(this.getdata(key))
-                } catch { }
+                } catch {
+                }
             }
             return json
         }
@@ -439,7 +442,7 @@ function Env(name, opts) {
                 .slice(0, -1)
                 .reduce((a, c, i) => (Object(a[c]) === a[c] ? a[c] : (a[c] = Math.abs(path[i + 1]) >> 0 === +path[i + 1] ? [] : {})), obj)[
                 path[path.length - 1]
-            ] = value
+                ] = value
             return obj
         }
 
@@ -522,7 +525,8 @@ function Env(name, opts) {
             }
         }
 
-        get(opts, callback = () => { }) {
+        get(opts, callback = () => {
+        }) {
             if (opts.headers) {
                 delete opts.headers['Content-Type']
                 delete opts.headers['Content-Length']
@@ -608,7 +612,8 @@ function Env(name, opts) {
             }
         }
 
-        post(opts, callback = () => { }) {
+        post(opts, callback = () => {
+        }) {
             // 如果指定了请求体, 但没指定`Content-Type`, 则自动生成
             if (opts.body && opts.headers && !opts.headers['Content-Type']) {
                 opts.headers['Content-Type'] = 'application/x-www-form-urlencoded'
@@ -684,6 +689,7 @@ function Env(name, opts) {
                 )
             }
         }
+
         /**
          *
          * 示例:$.time('yyyy-MM-dd qq HH:mm:ss.S')
