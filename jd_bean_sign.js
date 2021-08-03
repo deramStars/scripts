@@ -167,7 +167,7 @@ async function deleteFile(path) {
 function TotalBean() {
   return new Promise(async resolve => {
     const options = {
-      "url": `https://wq.jd.com/user/info/QueryJDUserInfo?sceneval=2`,
+      "url": `https://me-api.jd.com/user_new/info/GetJDUserInfoUnion`,
       "headers": {
         "Accept": "application/json,text/plain, */*",
         "Content-Type": "application/x-www-form-urlencoded",
