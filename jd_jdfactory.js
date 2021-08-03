@@ -30,7 +30,7 @@ if ($.isNode()) {
 }
 let wantProduct = ``;//心仪商品名称
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = [];
+const inviteCodes = ['T0225KkcRR9N8wCBcRj0xv5ZcQCjVWnYaS5kRrbA@T0225KkcRhscpFTWJBLwwaYLcQCjVWnYaS5kRrbA'];
 let myInviteCode;
 !(async () => {
   await requireConfig();
@@ -723,7 +723,7 @@ function taskPostUrl(function_id, body = {}, function_id2) {
 function TotalBean() {
   return new Promise(async resolve => {
     const options = {
-      "url": `https://wq.jd.com/user/info/QueryJDUserInfo?sceneval=2`,
+      "url": `https://me-api.jd.com/user_new/info/GetJDUserInfoUnion`,
       "headers": {
         "Accept": "application/json,text/plain, */*",
         "Content-Type": "application/x-www-form-urlencoded",
@@ -744,11 +744,11 @@ function TotalBean() {
         } else {
           if (data) {
             data = JSON.parse(data);
-            if (data['retcode'] === 13) {
+            if (data['retcode'] === "13") {
               $.isLogin = false; //cookie过期
               return
             }
-            if (data['retcode'] === 0) {
+            if (data['retcode'] === "0") {
               $.nickName = data['base'].nickname;
             } else {
               $.nickName = $.UserName
