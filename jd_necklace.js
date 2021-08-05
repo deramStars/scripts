@@ -412,10 +412,10 @@ function getCcTaskList(functionId, body, type = '3') {
   let url = `https://api.m.jd.com/client.action?functionId=${functionId}`
   return new Promise(resolve => {
     if (functionId === 'getCcTaskList') {
-
+      
     }
     if (functionId === 'reportCcTask'){
-
+      
     }
     if (functionId === 'reportSinkTask'){
       url += body
