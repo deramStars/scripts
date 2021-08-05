@@ -31,7 +31,7 @@ if ($.isNode()) {
 }
 let wantProduct = ``;//心仪商品名称
 const JD_API_HOST = 'https://api.m.jd.com/client.action';
-const inviteCodes = ['T0225KkcRR9N8wCBcRj0xv5ZcQCjVWnYaS5kRrbA@T0225KkcRhscpFTWJBLwwaYLcQCjVWnYaS5kRrbA'];
+const inviteCodes = ['T0225KkcRR9N8wCBcRj0xv5ZcQCjVWnYaS5kRrbA'];
 let myInviteCode;
 !(async () => {
     await requireConfig();
