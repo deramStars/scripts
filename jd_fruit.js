@@ -85,11 +85,15 @@ async function jdFruit() {
   try {
     await initForFarm();
     if ($.farmInfo.farmUserPro) {
-        const submitCodeRes = await submitCode();
-        if (submitCodeRes && submitCodeRes.code === 200) {
-            console.log(`🐔东东农场-互助码提交成功！🐔`);
-        }else if (submitCodeRes.code === 300) {
-            console.log(`🐔东东农场-互助码已提交！🐔`);
+        try{
+            const submitCodeRes = await submitCode();
+            if (submitCodeRes && submitCodeRes.code === 200) {
+                console.log(`🐔东东农场-互助码提交成功！🐔`);
+            }else if (submitCodeRes.code === 300) {
+                console.log(`🐔东东农场-互助码已提交！🐔`);
+            }
+        }catch (e){
+            console.log(`白嫖失败！`);
         }
       // option['media-url'] = $.farmInfo.farmUserPro.goodsImage;
       message = `【水果名称】${$.farmInfo.farmUserPro.name}\n`;
