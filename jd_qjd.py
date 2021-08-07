@@ -449,7 +449,7 @@ def start():
             u += 1
         groupCode, shareCode, sumBeanNumStr, activityId = getShareCode(
             cookiesList[ckNum])
-        userCount[f'{ckname[ckNum]}'] = sumBeanNumStr
+        userCount[f'{ckname}'] = sumBeanNumStr
         beanCount += sumBeanNumStr
     print("\n-------------------------")
     for i in userCount.keys():
