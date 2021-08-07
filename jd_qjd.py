@@ -66,6 +66,7 @@ t = time.time()
 aNum = 0
 beanCount = 0
 userCount = {}
+userNames = {}
 # 获取通知服务
 
 
@@ -229,14 +230,14 @@ class getJDCookie(object):
             'Accept-Language': 'zh-cn'
         }
         try:
-            # resp = requests.get(url=url,
-            #                     headers=headers, timeout=60).json()
-            # print(resp)
-            # r = re.compile(r'GetJDUserInfoUnion.*?\((.*?)\)')
-            # result = r.findall(resp)
-            # userInfo = json.loads(result[0])
-            # nickname = userInfo['data']['userInfo']['baseInfo']['nickname']
-            # return ck, nickname
+            resp = requests.get(url=url,
+                                headers=headers, timeout=60).json()
+            print(resp)
+            r = re.compile(r'GetJDUserInfoUnion.*?\((.*?)\)')
+            result = r.findall(resp)
+            userInfo = json.loads(result[0])
+            nickname = userInfo['data']['userInfo']['baseInfo']['nickname']
+            return ck, nickname
             return ck, ck
         except Exception as e:
             print(e)
