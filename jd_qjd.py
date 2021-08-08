@@ -16,6 +16,7 @@ new Env('全民抢京豆 8.6-8.16');
 * 新增推送
 * 修复0点不能开团
 * 兼容pin为中文转码编码
+* 修改推送名称的问题
 '''
 # print("全民抢京豆(7.22-7.31）--活动已结束\nTG交流 https://t.me/topstyle996\nTG频道 https://t.me/TopStyle2021")
 # exit(0)
