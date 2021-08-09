@@ -99,9 +99,9 @@ async function jdPlantBean() {
                 console.log(`🥑种豆得豆-互助码已提交！🥑`);
             }
             roundList = $.plantBeanIndexResult.data.roundList;
-            currentRoundId = roundList[1].roundId;//本期的roundId
-            lastRoundId = roundList[0].roundId;//上期的roundId
-            awardState = roundList[0].awardState;
+            currentRoundId = roundList[2].roundId;//本期的roundId
+            lastRoundId = roundList[1].roundId;//上期的roundId
+            awardState = roundList[1].awardState;
             $.taskList = $.plantBeanIndexResult.data.taskList;
             subTitle = `【京东昵称】${$.plantBeanIndexResult.data.plantUserInfo.plantNickName}`;
             message += `【上期时间】${roundList[0].dateDesc.replace('上期 ', '')}\n`;
