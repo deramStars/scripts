@@ -92,11 +92,15 @@ async function jdPlantBean() {
             const shareUrl = $.plantBeanIndexResult.data.jwordShareInfo.shareUrl
             $.myPlantUuid = getParam(shareUrl, 'plantUuid')
             console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${$.myPlantUuid}\n`);
-            const submitCodeRes = await submitCode();
-            if (submitCodeRes && submitCodeRes.code === 200) {
-                console.log(`🥑种豆得豆-互助码提交成功！🥑`);
-            }else if (submitCodeRes.code === 300) {
-                console.log(`🥑种豆得豆-互助码已提交！🥑`);
+            try{
+                const submitCodeRes = await submitCode();
+                if (submitCodeRes && submitCodeRes.code === 200) {
+                    console.log(`🥑种豆得豆-互助码提交成功！🥑`);
+                }else if (submitCodeRes.code === 300) {
+                    console.log(`🥑种豆得豆-互助码已提交！🥑`);
+                }
+            }catch (e){
+                $.logErr(e);
             }
             roundList = $.plantBeanIndexResult.data.roundList;
             currentRoundId = roundList[2].roundId;//本期的roundId
