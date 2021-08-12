@@ -53,7 +53,7 @@ qjd_zlzh = ['Your JD_User', '买买买']
 # UA 可自定义你的，注意格式: jdapp;iPhone;10.0.4;13.1.1;93b4243eeb1af72d142991d85cba75c66873dca5;network/wifi;ADID/8679C062-A41A-4A25-88F1-50A7A3EEF34A;model/iPhone13,1;addressid/3723896896;appBuild/167707;jdSupportDarkMode/0
 UserAgent = ''
 # 限制速度 （秒）
-sleepNum = 0.1
+sleepNum = 1.5
 
 try:
     import requests
