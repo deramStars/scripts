@@ -3,7 +3,7 @@
 极速版抢9.9-8优惠券,用京东汽车改的脚本
 
  */
-const $ = new Env('京东汽车兑换');
+const $ = new Env('极速版15-8');
 const moment = require('moment');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -35,8 +35,8 @@ let wait = ms => new Promise(resolve => setTimeout(resolve, ms));
   let millisecond = 0;
   const startWork = async () => {
     const array = [1,2]
-    
-    /* 
+
+    /*
 这个array控制了并发数
 const array = [1]
 
