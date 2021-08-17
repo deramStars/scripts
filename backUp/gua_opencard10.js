@@ -35,8 +35,8 @@ cron "30 0,22 11-18 8 *" script-path=https://raw.githubusercontent.com/smiek2221
 8.11-8.18 大牌联合 约惠一夏 = type=cron,script-path=https://raw.githubusercontent.com/smiek2221/scripts/master/gua_opencard10.js, cronexpr="30 0,22 11-18 8 *", timeout=3600, enable=true
 */
 const $ = new Env('8.11-8.18 大牌联合 约惠一夏');
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
-const notify = $.isNode() ? require('./sendNotify') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [],
     cookie = '';

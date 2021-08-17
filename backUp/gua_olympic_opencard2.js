@@ -24,9 +24,9 @@ cron "30 0,8 * * *" script-path=gua_olympic_opencard2.js,tag=7.31-8.10 全民奥
 7.31-8.10 全民奥运 激情奔跑 = type=cron,script-path=gua_olympic_opencard2.js, cronexpr="30 0,8 * * *", timeout=3600, enable=true
 */
 const $ = new Env('7.31-8.10 全民奥运 激情奔跑');
-const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const jdCookieNode = $.isNode() ? require('../jdCookie.js') : '';
 
-const notify = $.isNode() ? require('./sendNotify') : '';
+const notify = $.isNode() ? require('../sendNotify') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [],
     cookie = '';

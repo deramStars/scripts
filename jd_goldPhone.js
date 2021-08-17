@@ -14,7 +14,10 @@ if ($.isNode()) {
     })
     if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => { };
 } else {
-    cookiesArr = [$.getdata('CookieJD'), $.getdata('CookieJD2'), ...jsonParse($.getdata('CookiesJD') || "[]").map(item => item.cookie)].filter(item => !!item);
+    cookiesArr = [
+        $.getdata("CookieJD"),
+        $.getdata("CookieJD2"),
+        ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
 $.authorizationInfo = {};
 $.joinTeamLsit = [];
@@ -118,7 +121,7 @@ async function main() {
             await takePostRequest('draw_prize');
             await $.wait(2000);
         }
-        if ($.teamInfo.draw_total_second === 0 && $.teamInfo.team_vote_total >= 180) {
+        if ($.teamInfo.draw_total_second === 1 && $.teamInfo.team_vote_total >= 180) {
             console.log(`去抽奖2`);
             $.draw_type = 2;
             await takePostRequest('draw_prize');
@@ -136,7 +139,7 @@ async function main() {
             await takePostRequest('draw_prize');
             await $.wait(2000);
         }
-        if ($.teamInfo.draw_total_second === 0 && $.teamInfo.team_vote_total >= 180) {
+        if ($.teamInfo.draw_total_second === 1 && $.teamInfo.team_vote_total >= 180) {
             console.log(`去抽奖4`);
             $.draw_type = 2;
             await takePostRequest('draw_prize');
