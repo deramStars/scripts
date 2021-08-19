@@ -9,7 +9,7 @@
 
 =====================Loon================
 [Script]
-cron "13 1,22,23 * * *" script-path=jd_daily_lottery.js, tag=每日抽奖
+cron "30 1,22,23 * * *" script-path=jd_daily_lottery.js, tag=每日抽奖
 
 ====================Surge================
 每日抽奖 = type=cron,cronexp="13 1,22,23 * * *",wake-system=1,timeout=3600,script-path=jd_daily_lottery.js
