@@ -118,11 +118,6 @@ async function main() {
     const readTokenRes = ''
     // const readTokenRes = await readToken();
     await updateToken()
-    if (readTokenRes && readTokenRes.code === 200) {
-        $.LKYLToken = readTokenRes.data[0] || ($.isNode() ? (process.env.JOY_RUN_TOKEN ? process.env.JOY_RUN_TOKEN : jdJoyRunToken) : ($.getdata('jdJoyRunToken') || jdJoyRunToken));
-    } else {
-        $.LKYLToken = $.isNode() ? (process.env.JOY_RUN_TOKEN ? process.env.JOY_RUN_TOKEN : jdJoyRunToken) : ($.getdata('jdJoyRunToken') || jdJoyRunToken);
-    }
     console.log(`打印token：${$.LKYLToken ? $.LKYLToken : '暂无token'}\n`)
     if (!$.LKYLToken) {
         // $.msg($.name, '【提示】请先获取来客有礼宠汪汪token', "iOS用户微信搜索'来客有礼'小程序\n点击底部的'发现'Tab\n即可获取Token\n");
