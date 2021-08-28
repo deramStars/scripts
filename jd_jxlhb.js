@@ -102,16 +102,20 @@ const BASE_URL = 'https://wq.jd.com/cubeactive/steprewardv3'
   }
   //拆红包
   for (let i = 0; i < cookiesArr.length; i++) {
-    cookie = cookiesArr[i];
-    $.canOpenGrade = true;
-    $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-    UA = UAInfo[$.UserName]
-    for (let grade of $.grades) {
-      if (!$.packetIdArr[i]) continue;
-      console.log(`\n【${$.UserName}】去拆第${grade}个红包`);
-      await openRedPack($.packetIdArr[i]['strUserPin'], grade);
-      await $.wait(2000);
-    }
+      try {
+          cookie = cookiesArr[i];
+          $.canOpenGrade = true;
+          $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
+          UA = UAInfo[$.UserName]
+          for (let grade of $.grades) {
+              if (!$.packetIdArr[i]) continue;
+              console.log(`\n【${$.UserName}】去拆第${grade}个红包`);
+              await openRedPack($.packetIdArr[i]['strUserPin'], grade);
+              await $.wait(2000);
+          }
+      }catch (e) {
+          console.log(`拆红包失败:${data.sErrMsg}\n`);
+      }
   }
 })()
     .catch((e) => {
